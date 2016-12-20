@@ -9,4 +9,8 @@ RUN rpm --import https://s3-eu-west-1.amazonaws.com/qafoo-profiler/packages/EEB5
     yum -y install tideways-php tideways-cli tideways-daemon && \
     yum clean all
 
+COPY /usr/lib/tideways/tideways-php-7.0.so /opt/rh/rh-php70/root/usr/lib64/php/modules/tideways.so
+
+COPY /etc/php.d/40-tideways.ini /etc/opt/rh/rh-php70/php.d/40-tideways.ini
+
 USER 1001
