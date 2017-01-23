@@ -13,7 +13,7 @@ RUN rpm --import https://s3-eu-west-1.amazonaws.com/qafoo-profiler/packages/EEB5
     wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
     wget https://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
     rpm -Uvh remi-release-7.rpm epel-release-latest-7.noarch.rpm && \
-    yum -y --nodeps install php70-php-ast && \
+    yum -y --nodeps install php70-php-ast environment-modules tcl && \
     cp /opt/remi/php70/root/usr/lib64/php/modules/ast.so /opt/rh/rh-php70/root/usr/lib64/php/modules/ast.so && \
     cp /etc/opt/remi/php70/php.d/40-ast.ini /etc/opt/rh/rh-php70/php.d/40-ast.ini && \
     rm remi-release-7.rpm epel-release-latest-7.noarch.rpm
