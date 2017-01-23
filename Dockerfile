@@ -9,10 +9,10 @@ RUN rpm --import https://s3-eu-west-1.amazonaws.com/qafoo-profiler/packages/EEB5
     yum -y install tideways-php tideways-cli tideways-daemon && \
     yum clean all && \
     cp /usr/lib/tideways/tideways-php-7.0.so /opt/rh/rh-php70/root/usr/lib64/php/modules/tideways.so && \
-    cp /etc/php.d/40-tideways.ini /etc/opt/rh/rh-php70/php.d/40-tideways.ini
-
-RUN cp /usr/lib/tideways/tideways-php-7.0.so /opt/rh/rh-php70/root/usr/lib64/php/modules/tideways.so
-
-RUN cp /etc/php.d/40-tideways.ini /etc/opt/rh/rh-php70/php.d/40-tideways.ini
+    cp /etc/php.d/40-tideways.ini /etc/opt/rh/rh-php70/php.d/40-tideways.ini && \
+    wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm && \
+    wget https://rpms.remirepo.net/enterprise/remi-release-6.rpm && \
+    rpm -Uvh remi-release-6.rpm epel-release-latest-6.noarch.rpm && \
+    yum -y install php70-php-ast
 
 USER 1001
